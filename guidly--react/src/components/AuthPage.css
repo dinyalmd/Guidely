@@ -1,16 +1,31 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 .auth-container {
   height: 100vh;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(
+  background-image: linear-gradient(
       rgba(0, 0, 0, 0.4),
       rgba(0, 0, 0, 0.4)
     ),
-    url("famous-koutoubia-mosque-marrakech.jpg");
+    url("src/components/famous-koutoubia-mosque-marrakech.jpg");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   font-family: Arial, Helvetica, sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .auth-card {
@@ -20,10 +35,9 @@
   width: 380px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   text-align: center;
-
-  
+  position: relative;
+  z-index: 1;
 }
-
 
 .logo {
   color: #0099ff;
@@ -32,9 +46,8 @@
 
 .subtitle {
   color: #777;
-  
+  margin-bottom: 15px;
 }
-
 
 .form,
 form {
@@ -50,7 +63,8 @@ textarea {
   border: 1px solid #ccc;
   outline: none;
   transition: 0.3s;
-  width: 100%;;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 input:focus,
@@ -66,6 +80,8 @@ textarea:focus {
   border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
+  width: 100%;
+  margin-top: 5px;
 }
 
 .main-btn:hover {
@@ -78,8 +94,12 @@ textarea:focus {
   color: #0099ff;
   cursor: pointer;
   margin-bottom: 15px;
+  font-size: 14px;
 }
 
+.switch-btn:hover {
+  text-decoration: underline;
+}
 
 .role-selection {
   display: flex;
@@ -92,25 +112,44 @@ textarea:focus {
   padding: 10px;
   border-radius: 8px;
   border: 1px solid #0099ff;
-  background: rgb(0, 0, 0);
+  background: #ffffff;
   cursor: pointer;
+  color: #0099ff;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.role:hover {
+  background: #e6f4ff;
 }
 
 .role.active {
   background: #0099ff;
   color: white;
 }
+
 .icon {
-  color: #4a90e2; /* example color, compatible with design */
+  color: #4a90e2;
   margin-right: 10px;
   font-size: 1.2rem;
 }
+
 .input-group {
   display: flex;
   align-items: center;
-  
- 
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 0 10px;
+  transition: 0.3s;
 }
-.input-group input{
-    width: 100%;
+
+.input-group:focus-within {
+  border-color: #0099ff;
+}
+
+.input-group input {
+  width: 100%;
+  border: none;
+  padding: 10px 0;
+  outline: none;
 }
