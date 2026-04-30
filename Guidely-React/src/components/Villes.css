@@ -1,0 +1,153 @@
+/* ── Page ──────────────────────────────────────────── */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, #root {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.villes-page {
+    min-height: 100vh;
+    width: 100%;
+    background: #f4f6f4;
+    font-family: 'Segoe UI', sans-serif;
+    padding-top: 72px;
+}
+
+/* ── Hero ──────────────────────────────────────────── */
+.villes-hero {
+    background: linear-gradient(135deg, #0f3d2a 0%, #1a6b4a 100%);
+    padding: 4rem 2.5rem;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 2.4rem;
+    font-weight: 800;
+    margin: 0 0 0.8rem;
+    color: white;
+    font-family: 'Georgia', serif;
+}
+
+.hero-sub {
+    font-size: 1rem;
+    color: #c8dfd4;
+    margin: 0;
+}
+
+/* ── Content ───────────────────────────────────────── */
+.villes-content {
+    padding: 3rem 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.villes-section-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #0f3d2a;
+    margin-bottom: 1.5rem;
+}
+
+.villes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.8rem;
+    width: 100%;
+}
+
+/* ── Ville Card ────────────────────────────────────── */
+.ville-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+.ville-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 35px rgba(0,0,0,0.13);
+}
+
+.ville-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    flex-shrink: 0;
+}
+
+.ville-img-fallback {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    flex-shrink: 0;
+}
+
+.ville-body {
+    padding: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.ville-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #0f3d2a;
+    margin: 0 0 0.6rem;
+    font-family: 'Georgia', serif;
+}
+
+.ville-desc {
+    font-size: 0.88rem;
+    color: #6b8c7d;
+    line-height: 1.6;
+    margin: 0 0 1.2rem;
+    flex: 1;
+}
+
+.ville-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.guides-count {
+    font-size: 0.82rem;
+    color: #1a6b4a;
+    font-weight: 600;
+    background: #e8f5ee;
+    padding: 4px 12px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+.voir-btn {
+    color: white;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    font-family: 'Segoe UI', sans-serif;
+    transition: opacity 0.2s;
+}
+
+.voir-btn:hover {
+    opacity: 0.85;
+}

@@ -29,4 +29,14 @@ class GuideController extends Controller
             return response()->json(['error' => $e->getMessage()], 500);
         }
     }
+    public function show($id)
+    {
+        $guide = DB::table('guides')->where('id', $id)->first();
+        
+        if (!$guide) {
+            return response()->json(['error' => 'Guide non trouvé'], 404);
+        }
+        
+        return response()->json($guide);
+    }
 }
