@@ -1,3 +1,17 @@
+/* ===== VARIABLES — reprises du style Home ===== */
+:root {
+  --primary:      #8B5E3C;
+  --primary-dark: #6B4423;
+  --gold:         #C9A96E;
+  --gold-light:   #E8D5B0;
+  --beige:        #F5F0E8;
+  --beige-dark:   #EDE5D8;
+  --white:        #FFFFFF;
+  --text-dark:    #2C1810;
+  --text-gray:    #7A6A5A;
+}
+
+/* ===== RESET ===== */
 html, body {
   margin: 0;
   padding: 0;
@@ -8,13 +22,15 @@ html, body {
   box-sizing: border-box;
 }
 
+/* ===== AUTH CONTAINER ===== */
 .auth-container {
   height: 100vh;
   width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+  background-image:
+    linear-gradient(rgba(43, 24, 16, 0.55), rgba(43, 24, 16, 0.55)),
     url("src/components/famous-koutoubia-mosque-marrakech.jpg");
   background-size: cover;
   background-position: center;
@@ -25,12 +41,13 @@ html, body {
   left: 0;
 }
 
+/* ===== AUTH CARD ===== */
 .auth-card {
-  background: white;
+  background: var(--white);
   padding: 35px;
   border-radius: 15px;
   width: 400px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+  box-shadow: 0 10px 40px rgba(43, 24, 16, 0.35);
   text-align: center;
   position: relative;
   z-index: 1;
@@ -38,20 +55,24 @@ html, body {
   overflow-y: auto;
 }
 
+/* ===== LOGO & SUBTITLE ===== */
 .logo {
-  color: #0f3d2a;
+  font-family: 'Georgia', serif;
+  color: var(--primary-dark);
   font-size: 2rem;
-  font-weight: 800;
+  font-weight: 700;
   margin-bottom: 5px;
-  letter-spacing: -1px;
+  letter-spacing: 0.05em;
 }
 
 .subtitle {
-  color: #6b8c7d;
+  color: var(--text-gray);
   margin-bottom: 15px;
   font-size: 0.95rem;
+  font-weight: 300;
 }
 
+/* ===== FORM ===== */
 .form,
 form {
   display: flex;
@@ -59,51 +80,64 @@ form {
   gap: 10px;
 }
 
+/* ===== INPUTS ===== */
 input,
 textarea {
   padding: 10px;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--gold-light);
   outline: none;
   transition: 0.3s;
   width: 100%;
   box-sizing: border-box;
   font-family: inherit;
+  color: var(--text-dark);
+  background: var(--beige);
 }
 
 input:focus,
 textarea:focus {
-  border-color: #1a6b4a;
-  box-shadow: 0 0 0 2px rgba(26,107,74,0.1);
+  border-color: var(--gold);
+  box-shadow: 0 0 0 2px rgba(201, 169, 110, 0.2);
+  background: var(--white);
 }
 
+/* ===== BOUTON PRINCIPAL ===== */
 .main-btn {
-  background: #0f3d2a;
-  color: white;
-  border: none;
+  background: var(--white);
+  color: var(--primary);
+  
+  border: 1.5px solid var(--primary);
   padding: 11px;
   border-radius: 8px;
   cursor: pointer;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  
   width: 100%;
   margin-top: 5px;
   transition: background 0.2s;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 .main-btn:hover {
-  background: #1a6b4a;
+  background: var(--primary-dark);
+  color: var(--white);
 }
 
+
+
 .main-btn:disabled {
-  background: #6b8c7d;
+  background: var(--text-gray);
   cursor: not-allowed;
 }
 
+/* ===== BOUTON SWITCH ===== */
 .switch-btn {
   background: none;
   border: none;
-  color: #1a6b4a;
+  color: var(--primary);
   cursor: pointer;
   margin-bottom: 15px;
   font-size: 14px;
@@ -112,10 +146,11 @@ textarea:focus {
 }
 
 .switch-btn:hover {
-  color: #0f3d2a;
+  color: var(--primary-dark);
   text-decoration: underline;
 }
 
+/* ===== ROLE SELECTION ===== */
 .role-selection {
   display: flex;
   gap: 10px;
@@ -126,43 +161,48 @@ textarea:focus {
   flex: 1;
   padding: 10px;
   border-radius: 8px;
-  border: 1px solid #1a6b4a;
-  background: #ffffff;
+  border: 1.5px solid var(--gold);
+  background: var(--white);
   cursor: pointer;
-  color: #1a6b4a;
+  color: var(--primary);
   font-weight: 500;
   transition: all 0.3s;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 .role:hover {
-  background: #e8f5ee;
+  background: var(--primary-dark);
+  color: var(--white);
 }
 
 .role.active {
-  background: #0f3d2a;
-  color: white;
-  border-color: #0f3d2a;
+  background: var(--primary-dark);
+  color: var(--white);
+  border-color: var(--primary-dark);
 }
 
+/* ===== ICONE ===== */
 .icon {
-  color: #1a6b4a;
+  color: var(--gold);
   margin-right: 10px;
   font-size: 1.1rem;
 }
 
+/* ===== INPUT GROUP ===== */
 .input-group {
   display: flex;
   align-items: center;
-  border: 1px solid #ccc;
+  border: 1px solid var(--gold-light);
   border-radius: 8px;
   padding: 0 10px;
   transition: 0.3s;
-  background: white;
+  background: var(--beige);
 }
 
 .input-group:focus-within {
-  border-color: #1a6b4a;
-  box-shadow: 0 0 0 2px rgba(26,107,74,0.1);
+  border-color: var(--gold);
+  box-shadow: 0 0 0 2px rgba(201, 169, 110, 0.2);
+  background: var(--white);
 }
 
 .input-group input,
@@ -172,14 +212,109 @@ textarea:focus {
   padding: 10px 0;
   outline: none;
   box-shadow: none;
+  background: transparent;
 }
 
+/* ===== MESSAGE D'ERREUR ===== */
 .error-msg {
-  background: #fff5f5;
-  color: #c53030;
-  border: 1px solid #fed7d7;
+  background: #fff8f5;
+  color: var(--primary-dark);
+  border: 1px solid var(--gold-light);
   border-radius: 8px;
   padding: 8px 12px;
   font-size: 0.85rem;
   text-align: left;
+}
+
+/* ===== UPLOAD PHOTO & CNI ===== */
+.upload-field {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid var(--gold-light);
+  border-radius: 8px;
+  padding: 8px 12px;
+  background: var(--beige);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.upload-field:hover {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 2px rgba(201, 169, 110, 0.2);
+}
+
+/* Avatar circulaire */
+.upload-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--gold);
+  flex-shrink: 0;
+}
+
+/* Cercle placeholder avant sélection */
+.upload-avatar-placeholder {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--beige-dark);
+  border: 2px dashed var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--text-gray);
+  font-size: 1.1rem;
+}
+
+/* Texte à droite de l'icône */
+.upload-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+}
+
+.upload-label {
+  font-size: 0.85rem;
+  color: var(--text-gray);
+  margin-bottom: 2px;
+}
+
+.upload-filename {
+  font-size: 0.9rem;
+  color: var(--primary-dark);
+  font-weight: 600;
+}
+
+/* Badge "Sélectionné" */
+.upload-badge {
+  background: var(--beige-dark);
+  color: var(--primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 20px;
+  flex-shrink: 0;
+}
+
+/* Bouton "Choisir" */
+.upload-btn {
+  background: var(--primary-dark);
+  color: var(--white);
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.2s;
+  letter-spacing: 0.05em;
+}
+
+.upload-btn:hover {
+  background: var(--primary);
 }

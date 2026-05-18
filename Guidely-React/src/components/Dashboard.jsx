@@ -25,6 +25,11 @@ function Dashboard() {
 
     const initiale = (user?.nom_complet || "G").charAt(0).toUpperCase();
 
+    // Si profile a une photo → on construit l'URL complète, sinon null
+    const photoUrl = profile?.photo
+        ? `http://localhost:8000/storage/${profile.photo}`
+        : null;
+
     return (
         <div className="dashboard-page">
             {/* Navbar commune */}
@@ -34,7 +39,18 @@ function Dashboard() {
                 {/* Sidebar */}
                 <aside className="sidebar">
                     <div className="sidebar-avatar">
-                        <div className="avatar-circle">{initiale}</div>
+
+                        {/* Avatar sidebar : photo ou lettre */}
+                        {photoUrl
+                            ? <img
+                                src={photoUrl}
+                                alt="photo de profil"
+                                className="avatar-circle"
+                                style={{ objectFit: "cover" }}
+                              />
+                            : <div className="avatar-circle">{initiale}</div>
+                        }
+
                         <p className="avatar-name">{user?.nom_complet}</p>
                         <span className="badge-guide">Guide</span>
                     </div>
@@ -67,7 +83,18 @@ function Dashboard() {
                             ) : (
                                 <div className="profil-card">
                                     <div className="profil-header">
-                                        <div className="profil-avatar">{initiale}</div>
+
+                                        {/* Avatar carte profil : photo ou lettre */}
+                                        {photoUrl
+                                            ? <img
+                                                src={photoUrl}
+                                                alt="photo de profil"
+                                                className="profil-avatar"
+                                                style={{ objectFit: "cover" }}
+                                              />
+                                            : <div className="profil-avatar">{initiale}</div>
+                                        }
+
                                         <div>
                                             <h3 className="profil-name">{profile?.nom_complet || user?.nom_complet}</h3>
                                             <p className="profil-email">{profile?.email || user?.email}</p>
@@ -94,10 +121,7 @@ function Dashboard() {
                                                     <span className="profil-value">{profile.num_cni}</span>
                                                 </div>
                                             </div>
-                                            <div className="bio-box">
-                                                <span className="profil-label">Biographie</span>
-                                                <p className="bio-text">{profile.biographie}</p>
-                                            </div>
+                                            
                                         </>
                                     )}
                                 </div>

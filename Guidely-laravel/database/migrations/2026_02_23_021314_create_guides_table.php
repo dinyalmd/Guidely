@@ -13,10 +13,11 @@ return new class extends Migration
 {
     Schema::create('guides', function (Blueprint $table) {
         $table->id();
+        $table->string('photo')->nullable(); 
         $table->string('nom_complet');
         $table->string('email')->unique();
         $table->string('mot_de_passe');
-        $table->string('num_cni');
+        $table->string('cni_file')->nullable();   
         $table->text('biographie');
         $table->string('langues');
         $table->string('ville_couverte');

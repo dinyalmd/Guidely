@@ -9,14 +9,11 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
-        Schema::create('avis', function (Blueprint $table) {
-            $table->id();
-            $table->Integer('note');
-            $table->String('commantaire');
-            $table->Date('date');
-            $table->timestamps();
+        Schema::table('guides', function (Blueprint $table) {
+            $table->string('photo')->nullable();
+            $table->string('cni_file')->nullable();
         });
     }
 
@@ -25,6 +22,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('avis');
+        Schema::table('guides', function (Blueprint $table) {
+            //
+        });
     }
 };

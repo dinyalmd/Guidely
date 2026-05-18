@@ -1,151 +1,163 @@
-/* ── Page ──────────────────────────────────────────── */
-* {
-    box-sizing: border-box;
+/* ===== VARIABLES ===== */
+:root {
+  --primary: #8B5E3C;
+  --primary-dark: #6B4423;
+  --gold: #C9A96E;
+  --gold-light: #E8D5B0;
+  --beige: #F5F0E8;
+  --white: #FFFFFF;
+  --text-dark: #2C1810;
+  --text-gray: #7A6A5A;
 }
 
-body, #root {
-    width: 100%;
-    overflow-x: hidden;
-}
-
+/* ===== PAGE ===== */
 .villes-page {
-    min-height: 100vh;
-    width: 100%;
-    background: #f4f6f4;
-    font-family: 'Segoe UI', sans-serif;
-    padding-top: 72px;
+  min-height: 100vh;
+  padding-top: 72px;
+  background: var(--beige);
 }
 
-/* ── Hero ──────────────────────────────────────────── */
-.villes-hero {
-    background: linear-gradient(135deg, #0f3d2a 0%, #1a6b4a 100%);
-    padding: 4rem 2.5rem;
-    text-align: center;
+/* ===== HERO ===== */
+.villes-page .villes-hero {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  padding: 5rem 2rem;
+  text-align: center;
 }
 
-.hero-title {
-    font-size: 2.4rem;
-    font-weight: 800;
-    margin: 0 0 0.8rem;
-    color: white;
-    font-family: 'Georgia', serif;
+.villes-page .hero-title {
+  font-size: 2.6rem;
+  font-family: 'Georgia', serif;
+  color: var(--white);
+  margin-bottom: 10px;
 }
 
-.hero-sub {
-    font-size: 1rem;
-    color: #c8dfd4;
-    margin: 0;
+.villes-page .hero-sub {
+  color: var(--gold-light);
+  font-size: 1rem;
 }
 
-/* ── Content ───────────────────────────────────────── */
-.villes-content {
-    padding: 3rem 2.5rem;
-    max-width: 1200px;
-    margin: 0 auto;
+/* ===== CONTENT ===== */
+.villes-page .villes-content {
+  max-width: 1200px;
+  margin: auto;
+  padding: 3rem 2rem;
 }
 
-.villes-section-title {
+.villes-page .villes-section-title {
+  font-size: 1.5rem;
+  color: var(--primary-dark);
+  font-family: 'Georgia', serif;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* ===== GRID ===== */
+.villes-page .villes-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+/* ===== CARD ===== */
+.villes-page .ville-card {
+  background: var(--white);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  max-width: 850px;
+  width: 100%;
+  margin: auto;
+}
+
+.villes-page .ville-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== IMAGE ===== */
+.villes-page .ville-img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+/* ===== BODY ===== */
+.villes-page .ville-body {
+  padding: 1.5rem;
+}
+
+.villes-page .ville-title {
+  font-family: 'Georgia', serif;
+  font-size: 1.6rem;
+  color: var(--primary-dark);
+  margin-bottom: 12px;
+}
+
+.villes-page .ville-desc {
+  font-size: 0.95rem;
+  color: var(--text-gray);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+/* ===== FOOTER ===== */
+.villes-page .ville-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.villes-page .guides-count {
+  font-size: 0.85rem;
+  background: var(--beige);
+  color: var(--primary);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+/* ===== BUTTON ===== */
+.villes-page .voir-btn {
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  padding: 10px 18px;
+  border-radius: 25px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.villes-page .voir-btn:hover {
+  background: var(--gold);
+  color: var(--text-dark);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .villes-page .hero-title {
+    font-size: 2rem;
+  }
+
+  .villes-page .ville-img {
+    height: 220px;
+  }
+
+  .villes-page .ville-body {
+    padding: 1.2rem;
+  }
+
+  .villes-page .ville-title {
     font-size: 1.3rem;
-    font-weight: 700;
-    color: #0f3d2a;
-    margin-bottom: 1.5rem;
-}
+  }
 
-.villes-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.8rem;
-    width: 100%;
-}
-
-/* ── Ville Card ────────────────────────────────────── */
-.ville-card {
-    background: white;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-    display: flex;
+  .villes-page .ville-footer {
     flex-direction: column;
-}
-
-.ville-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 35px rgba(0,0,0,0.13);
-}
-
-.ville-img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    display: block;
-    flex-shrink: 0;
-}
-
-.ville-img-fallback {
-    width: 100%;
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 3.5rem;
-    flex-shrink: 0;
-}
-
-.ville-body {
-    padding: 1.4rem;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-
-.ville-title {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: #0f3d2a;
-    margin: 0 0 0.6rem;
-    font-family: 'Georgia', serif;
-}
-
-.ville-desc {
-    font-size: 0.88rem;
-    color: #6b8c7d;
-    line-height: 1.6;
-    margin: 0 0 1.2rem;
-    flex: 1;
-}
-
-.ville-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: auto;
-}
-
-.guides-count {
-    font-size: 0.82rem;
-    color: #1a6b4a;
-    font-weight: 600;
-    background: #e8f5ee;
-    padding: 4px 12px;
-    border-radius: 20px;
-    white-space: nowrap;
-}
-
-.voir-btn {
-    color: white;
-    border: none;
-    padding: 0.5rem 1.2rem;
-    border-radius: 8px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    cursor: pointer;
-    white-space: nowrap;
-    font-family: 'Segoe UI', sans-serif;
-    transition: opacity 0.2s;
-}
-
-.voir-btn:hover {
-    opacity: 0.85;
+    align-items: flex-start;
+  }
 }
